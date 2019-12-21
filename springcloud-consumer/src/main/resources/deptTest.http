@@ -1,0 +1,49 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+# 部门列表
+POST http://localhost:9001/consumer/dept/listDept
+Content-Type: application/json
+
+{
+  "deptName": "R",
+  "pageNum": 1,
+  "pageSize": 10
+}
+
+###
+
+#获取部门信息
+GET http://localhost:9001/consumer/dept/getDept/26434605171081216
+Accept: application/json
+
+###
+
+# 新增部门
+POST http://localhost:9001/consumer/dept/saveDept
+Content-Type: application/json
+
+{
+"deptName": "供应链"
+}
+
+###
+
+# 修改部门
+POST http://localhost:9001/consumer/dept/updateDept
+Content-Type: application/json
+
+{
+  "id": 26434605171081216,
+  "deptName": "SCM"
+}
+
+###
+
+# 删除部门
+GET http://localhost:9001/consumer/dept/deleteDept/26434605171081216
+Accept: application/json

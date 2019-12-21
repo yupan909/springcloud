@@ -9,27 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-provider</artifactId>
-    <description>服务提供者</description>
+    <artifactId>springcloud-consumer</artifactId>
+    <description>服务消费者</description>
 
     <dependencies>
-                    <!-- 二方包 -->
+        <!-- 二方包 -->
 
         <dependency>
             <groupId>com.java</groupId>
             <artifactId>springcloud-core</artifactId>
         </dependency>
 
-                    <!-- 三方包 -->
-        <!-- 支持将微服务注册到Eureka -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
+        <!-- 三方包 -->
 
         <!-- 支持全栈式Web开发，包括Tomcat和spring-webmvc -->
         <dependency>
@@ -50,31 +41,6 @@
             <artifactId>fastjson</artifactId>
         </dependency>
 
-        <!-- 集成mysql -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <!--使用阿里的Druid连接池-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-        </dependency>
-
-        <!-- 集成mybatis -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-
-        <!-- mybatis 分页插件 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-        </dependency>
-
     </dependencies>
-
 
 </project>

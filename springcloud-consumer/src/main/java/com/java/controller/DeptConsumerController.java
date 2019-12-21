@@ -1,34 +1,34 @@
 package com.java.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.java.bean.base.BaseResult;
 import com.java.bean.dto.DeptDTO;
 import com.java.bean.so.DeptSO;
-import com.java.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 /**
- * 部门
+ * 部门消费者
  *
  * @author yupan@yijiupi.cn
- * @date 2019-12-11 14:29
+ * @date 2019-12-21 17:27
  */
 @RestController
-@RequestMapping("/dept")
-public class DeptController {
+@RequestMapping("/consumer/dept")
+public class DeptConsumerController {
 
     @Autowired
-    private DeptService deptService;
+    private RestTemplate restTemplate;
+
+    private final static String URL = "http://localhost:9000";
 
     /**
      * 部门列表
      */
     @PostMapping("/listDept")
     public BaseResult listDept(@RequestBody DeptSO deptSO) {
-        PageInfo<DeptDTO> list = deptService.listDept(deptSO);
-        System.out.println("provider");
-        return new BaseResult<>(list);
+        System.out.println("consumer");
+        return restTemplate.postForObject(URL + "/dept/listDept", deptSO, BaseResult.class);
     }
 
     /**
@@ -36,8 +36,7 @@ public class DeptController {
      */
     @GetMapping("/getDept/{id}")
     public BaseResult getDept(@PathVariable("id") Long id) {
-        DeptDTO deptDTO = deptService.getDept(id);
-        return new BaseResult<>(deptDTO);
+        return restTemplate.getForObject(URL + "/dept/getDept/" + id, BaseResult.class);
     }
 
     /**
@@ -45,8 +44,7 @@ public class DeptController {
      */
     @PostMapping("/saveDept")
     public BaseResult saveDept(@RequestBody DeptDTO deptDTO) {
-        deptService.saveDept(deptDTO);
-        return BaseResult.successResult();
+        return restTemplate.postForObject(URL + "/dept/saveDept", deptDTO, BaseResult.class);
     }
 
     /**
@@ -54,8 +52,7 @@ public class DeptController {
      */
     @PostMapping("/updateDept")
     public BaseResult updateDept(@RequestBody DeptDTO deptDTO) {
-        deptService.updateDept(deptDTO);
-        return BaseResult.successResult();
+        return restTemplate.postForObject(URL + "/dept/updateDept", deptDTO, BaseResult.class);
     }
 
     /**
@@ -63,7 +60,6 @@ public class DeptController {
      */
     @GetMapping("/deleteDept/{id}")
     public BaseResult deleteDept(@PathVariable("id") Long id) {
-        deptService.deleteDept(id);
-        return BaseResult.successResult();
+        return restTemplate.getForObject(URL + "/dept/deleteDept/" + id, BaseResult.class);
     }
 }
