@@ -15,6 +15,8 @@
         <module>springcloud-provider</module>
         <module>springcloud-consumer</module>
         <module>springcloud-eureka</module>
+        <module>springcloud-eureka-02</module>
+        <module>springcloud-eureka-03</module>
     </modules>
 
     <properties>
