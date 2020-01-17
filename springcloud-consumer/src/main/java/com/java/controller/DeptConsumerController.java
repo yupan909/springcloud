@@ -20,7 +20,7 @@ public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final static String URL = "http://localhost:9000";
+    private final static String URL = "http://SPRINGCLOUD-PROVIDER";
 
     /**
      * 部门列表
