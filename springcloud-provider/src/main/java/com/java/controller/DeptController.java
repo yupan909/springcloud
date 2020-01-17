@@ -66,4 +66,12 @@ public class DeptController {
         deptService.deleteDept(id);
         return BaseResult.successResult();
     }
+
+    /**
+     * 负载均衡测试
+     */
+    @GetMapping("/hello")
+    public BaseResult hello() {
+        return new BaseResult<>("hello world【01】");
+    }
 }

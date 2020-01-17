@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 8001
 
 spring:
   application:
@@ -32,5 +32,5 @@ eureka:           # 客户端注册到eureka服务中
 
 
   instance:
-    instance-id: provider-9000    # 自定义服务名称信息
+    instance-id: provider-8001    # 自定义服务名称信息
     prefer-ip-address: true       # 访问路径可以显示ip地址

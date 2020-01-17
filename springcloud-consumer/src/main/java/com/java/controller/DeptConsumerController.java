@@ -23,6 +23,14 @@ public class DeptConsumerController {
     private final static String URL = "http://SPRINGCLOUD-PROVIDER";
 
     /**
+     * 负载均衡测试
+     */
+    @GetMapping("/hello")
+    public BaseResult hello() {
+        return restTemplate.getForObject(URL + "/dept/hello", BaseResult.class);
+    }
+
+    /**
      * 部门列表
      */
     @PostMapping("/listDept")
