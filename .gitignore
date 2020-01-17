@@ -27,3 +27,12 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+*/.svn/
+*/.idea/
+*/logs/
+*/target/
+*/.project
+*/.classpath
+*/.settings/
+/.project
