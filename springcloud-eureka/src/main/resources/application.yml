@@ -9,9 +9,8 @@ eureka:
   instance:
     hostname: eureka01             # eureka服务器的实例名称
   client:
-#    registerWithEureka: false       # false表示不向注册中心注册自己（单机配置）
-    registerWithEureka: true        # 做注册中心集群的时候，register-with-eureka必须打开，因为需要进行相互注册，不然副本无法可用
-    fetchRegistry: false            # false表示自己就是注册中心
+#    registerWithEureka: false      # 是否需要注册到注册中心（单机配置时设为false，不需要注册自己；集群的时候设为true，因为需要进行相互注册，不然副本无法可用）
+    fetchRegistry: false            # 是否需要从注册中心获取服务列表
     serviceUrl:                     # eureka注册中心地址
       # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/   单机配置
       defaultZone: http://eureka02:7002/eureka/,http://eureka03:7003/eureka/
