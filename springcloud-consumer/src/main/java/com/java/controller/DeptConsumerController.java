@@ -3,6 +3,7 @@ package com.java.controller;
 import com.java.bean.base.BaseResult;
 import com.java.bean.dto.DeptDTO;
 import com.java.bean.so.DeptSO;
+import com.java.service.DeptConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -20,13 +21,24 @@ public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private DeptConsumerService deptConsumerService;
+
     private final static String URL = "http://SPRINGCLOUD-PROVIDER";
 
     /**
-     * 负载均衡测试
+     * Feign负载均衡测试
      */
-    @GetMapping("/hello")
-    public BaseResult hello() {
+    @GetMapping("/feign")
+    public BaseResult feign() {
+        return deptConsumerService.hello();
+    }
+
+    /**
+     * Ribbon负载均衡测试
+     */
+    @GetMapping("/ribbon")
+    public BaseResult ribbon() {
         return restTemplate.getForObject(URL + "/dept/hello", BaseResult.class);
     }
 
