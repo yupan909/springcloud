@@ -37,12 +37,6 @@
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
 
-        <!-- hystrix断路器 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-
         <!-- 支持全栈式Web开发，包括Tomcat和spring-webmvc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
