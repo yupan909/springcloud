@@ -9,18 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-provider-03</artifactId>
-    <description>服务提供者</description>
+    <artifactId>springcloud-consumer-feign</artifactId>
+    <description>服务消费者</description>
 
     <dependencies>
-                    <!-- 二方包 -->
+        <!-- 二方包 -->
 
         <dependency>
             <groupId>com.java</groupId>
             <artifactId>springcloud-core</artifactId>
         </dependency>
 
-                    <!-- 三方包 -->
+        <!-- 三方包 -->
         <!-- 支持将微服务注册到Eureka -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -31,13 +31,30 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
+        <!-- Feign客户端负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+
+        <!-- hystrix断路器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
         <!-- 支持全栈式Web开发，包括Tomcat和spring-webmvc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-    </dependencies>
+        <!-- 支持json数据 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
 
+    </dependencies>
 
 </project>
