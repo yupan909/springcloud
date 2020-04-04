@@ -20,6 +20,7 @@
         <module>springcloud-eureka-03</module>
         <module>springcloud-consumer-ribbon</module>
         <module>springcloud-consumer-feign</module>
+        <module>springcloud-consumer-hystrix-dashboard</module>
     </modules>
 
     <properties>
