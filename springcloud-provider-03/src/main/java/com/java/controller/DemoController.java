@@ -1,6 +1,7 @@
 package com.java.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,8 +16,8 @@ public class DemoController {
     /**
      * 生产者
      */
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello world【03】";
+    @GetMapping("/hello/{id}")
+    public String hello(@PathVariable("id") String id) {
+        return "hello world【03】:" + id;
     }
 }

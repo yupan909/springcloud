@@ -1,6 +1,7 @@
 package com.java.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "SPRINGCLOUD-PROVIDER", fallback = ConsumerFeignServiceHystrix.class)
 public interface ConsumerFeignService {
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    String hello();
+    @RequestMapping(value = "/hello/{id}", method = RequestMethod.GET)
+    String hello(@PathVariable("id") String id);
 }

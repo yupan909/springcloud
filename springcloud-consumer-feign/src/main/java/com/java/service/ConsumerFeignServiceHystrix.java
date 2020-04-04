@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ConsumerFeignServiceHystrix implements ConsumerFeignService {
 
     @Override
-    public String hello() {
-        return "调用失败，服务熔断降级";
+    public String hello(String id) {
+        return "调用失败，服务熔断降级:" + id;
     }
 }
