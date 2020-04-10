@@ -7,7 +7,6 @@ spring:
 
 eureka:           # 配置访问eureka注册中心
   client:
-    registerWithEureka: false       # 是否需要注册到注册中心，消费者可以不需要注册
     serviceUrl:
       defaultZone: http://eureka01:7001/eureka/,http://eureka02:7002/eureka/,http://eureka03:7003/eureka/
 

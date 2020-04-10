@@ -14,5 +14,6 @@ zuul:
   prefix: /java             # 统一访问前缀
   ignored-services: "*"     # 不能访问的服务
   routes:                   # 路由映射
+    springcloud-consumer-feign: /consumer/**
     springcloud-provider: /provider/**
     springcloud-provider-hystrix: /provider-hystrix/**
