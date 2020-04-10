@@ -1,0 +1,18 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul  # 应用名称
+
+eureka:           # 配置访问eureka注册中心
+  client:
+    serviceUrl:
+      defaultZone: http://eureka01:7001/eureka/,http://eureka02:7002/eureka/,http://eureka03:7003/eureka/
+
+zuul:
+  prefix: /java             # 统一访问前缀
+  ignored-services: "*"     # 不能访问的服务
+  routes:                   # 路由映射
+    springcloud-provider: /provider/**
+    springcloud-provider-hystrix: /provider-hystrix/**
