@@ -23,6 +23,7 @@
         <module>springcloud-consumer-feign</module>
         <module>springcloud-consumer-hystrix-dashboard</module>
         <module>springcloud-gateway-zuul</module>
+        <module>springcloud-config-server</module>
     </modules>
 
     <properties>

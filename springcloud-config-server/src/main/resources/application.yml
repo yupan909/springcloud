@@ -1,0 +1,22 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: springcloud-config-server  # 应用名称
+
+  # config配置
+  cloud:
+    config:
+      server:
+        git:  # git地址
+          uri: https://github.com/yupan909/springcloud.git
+          search-paths: config-client
+          username: upan909
+          password: yupan.123456
+
+eureka:           # 配置访问eureka注册中心
+  client:
+    serviceUrl:
+      defaultZone: http://eureka01:7001/eureka/,http://eureka02:7002/eureka/,http://eureka03:7003/eureka/
+
